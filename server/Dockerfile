@@ -13,4 +13,4 @@ COPY ./run.sh /usr/microservices
 
 WORKDIR /usr/microservices
 
-ENTRYPOINT ["/bin/bash"]
+CMD ["/bin/bash" , "./run.sh"]
