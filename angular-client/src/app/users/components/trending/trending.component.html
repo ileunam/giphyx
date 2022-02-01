@@ -1,0 +1,22 @@
+<!--Render GIFs-->
+<ngx-masonry
+  class="row m-0"
+  infiniteScroll
+  [infiniteScrollDistance]="2"
+  [infiniteScrollThrottle]="50"
+  (scrolled)="onScroll()"
+>
+  <div
+    class="col-6 col-sm-3 p-0"
+    ngxMasonryItem
+    *ngFor="let data of gifsData"
+  >
+    <!--Each card of the gifs-->
+    <gifcard
+      [gifData]="data"
+    >
+    </gifcard>
+  </div>
+</ngx-masonry>
+
+

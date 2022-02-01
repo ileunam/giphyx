@@ -1,0 +1,55 @@
+<nav class="navbar navbar-expand-lg navbar-dark ml-1 mr-1">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="../assets/images/logo.gif" width="50" height="30" class="d-inline-block align-top" alt="">
+      Giphyx
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div
+      class="collapse navbar-collapse justify-content-end"
+      id="navbarNav">
+
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <input
+            class="form-control p-0 mt-2"
+            placeholder="Search"
+            aria-label="Search"
+            #searchGif
+            (keyup.enter)="searchGifs(searchGif.value)"
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link active"
+            [routerLink]="['trending']"
+          >Ranking</a>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link active"
+            [routerLink]="['user']"
+          >
+            Favorite GIFs
+          </a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+             aria-expanded="false">
+            <img src="../assets/images/profile.gif" width="36" height="36" class="d-inline-block align-top" alt="">
+            User
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">Settings</a></li>
+            <li><a class="dropdown-item" href="#">Favorites</a></li>
+            <li><a class="dropdown-item" href="#">Log Out</a></li>
+          </ul>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,35 @@
+<div
+  class="card bg-dark text-white"
+  (mouseenter)="handleInfoDisplayOn()"
+  (mouseleave)="handleInfoDisplayOff()"
+>
+  <img
+    src="{{gifData.images.fixed_height.url}}"
+    class="card-img"
+    alt="...">
+  <div class="card-img-overlay">
+    <h5
+      [ngClass]="cardDisplay"
+    >
+      {{gifData.title}}
+    </h5>
+    <p
+      [ngClass]="cardDisplay"
+    >
+      By: {{gifData.username}}
+    </p>
+    <p
+      [ngClass]="cardDisplay"
+    >
+      <button
+        class="card-text btn btn-success"
+        type="button"
+      >
+        Fav
+      </button>
+
+    </p>
+  </div>
+</div>
+
+

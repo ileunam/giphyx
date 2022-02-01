@@ -1,0 +1,35 @@
+server:
+  port: 8090
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
+spring:
+  application:
+    name: ms-gateway
+  cloud:
+    gateway:
+      routes:
+      - id: ms-gif
+        uri: lb://ms-gif
+        predicates:
+          - Path=/api/gif/**
+        filters:
+          - StripPrefix=2
+      - id: ms-users
+        uri: lb://ms-users
+        predicates:
+          - Path=/api/users/**
+        filters:
+          - StripPrefix=2
+      - id: ms-oauth
+        uri: lb://ms-oauth
+        predicates:
+          - Path=/api/security/**
+        filters:
+          - StripPrefix=2
+        default-filters:
+          - RemoveRequestHeader=Cookie
+          - RemoveRequestHeader=Set-Cookie
