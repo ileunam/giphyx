@@ -9,6 +9,8 @@ COPY ./ms-oauth/build/libs/*-SNAPSHOT.jar /usr/microservices
 COPY ./ms-users/build/libs/*-SNAPSHOT.jar /usr/microservices
 COPY ./ms-zuul/build/libs/*-SNAPSHOT.jar /usr/microservices
 
+COPY ./run.sh /usr/microservices
+
 WORKDIR /usr/microservices
 
 ENTRYPOINT ["/bin/bash"]

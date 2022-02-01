@@ -4,6 +4,12 @@ plugins {
     id 'java'
 }
 
+jar {
+    manifest {
+        attributes 'Main-Class': 'com.laboratorio.gateway.MsGatewayApplication'
+    }
+}
+
 group = 'com.laboratorio.gateway'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
