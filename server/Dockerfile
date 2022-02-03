@@ -12,5 +12,7 @@ COPY ./ms-zuul/build/libs/*-SNAPSHOT.jar /usr/microservices
 COPY ./run.sh /usr/microservices
 
 WORKDIR /usr/microservices
+RUN chmod +x ./run.sh
+RUN ./run.sh
 
-CMD ["/bin/bash" , "./run.sh"]
+ENTRYPOINT ["/bin/bash"]
